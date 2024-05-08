@@ -37,7 +37,7 @@ export const StakeRewards = () => {
     }, []);
 
     return (
-        <div style={{ width: "100%", margin: "20px 0", display: "flex", flexDirection: "column" }}>
+        <div style={{ width: "100%", margin: "20px 0", display: "flex", flexDirection: "column", color: "white" }}>
             {!isTokenBalanceLoading && (
                 <p>Wallet Balance: {toEther(BigInt(tokenBalance!.toString()))}</p>
             )}

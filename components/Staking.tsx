@@ -26,15 +26,30 @@ export const Staking = () => {
                 count: parseInt(totalNFTSupply.toString()),
             });
             
-            const userOwnedNFTs = nfts.filter(async nft => {
-                const owner = await ownerOf({
+            // const userOwnedNFTs = nfts.filter(async nft => {
+            //     const owner = await ownerOf({
+            //         contract: NFT_CONTRACT,
+            //         tokenId: nft.id,
+            //     });
+            //     return owner === account?.address;
+            // });
+            
+            // setOwnedNFTs(userOwnedNFTs);
+            const userOwnedNFTs = await Promise.all(
+                nfts.map(async (nft) => {
+                  const owner = await ownerOf({
                     contract: NFT_CONTRACT,
                     tokenId: nft.id,
-                });
-                return owner === account?.address;
-            });
-            
-            setOwnedNFTs(userOwnedNFTs);
+                  });
+                  return { nft, owner };
+                })
+              );
+        
+        const filteredNFTs = userOwnedNFTs
+                .filter(({ owner }) => owner === account?.address)
+                .map(({ nft }) => nft);
+        
+              setOwnedNFTs(filteredNFTs);
         } catch (error) {
             console.error("Error fetching owned NFTs:", error);
         }
