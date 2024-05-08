@@ -3,8 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 3rem 1rem; /* Adjusted padding for mobile */
   min-height: 100vh;
+  background-color: #121212; /* Dark background color */
 }
 
 .description {
@@ -12,7 +13,7 @@
   justify-content: inherit;
   align-items: inherit;
   font-size: 0.85rem;
-  max-width: var(--max-width);
+  max-width: 90%; /* Adjusted max-width for mobile */
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
@@ -64,13 +65,15 @@
   margin-bottom: 0.7rem;
 }
 
-.card p {
-  margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 30ch;
-  text-wrap: balance;
+.card {
+  padding: 1rem; /* Adjusted padding for mobile */
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+  width: 90%; /* Adjusted width for mobile */
+  max-width: 400px; /* Maximum width for mobile */
+  margin-bottom: 1rem; /* Added margin-bottom for spacing */
 }
 
 .center {
@@ -134,13 +137,13 @@
 
   .grid {
     grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
+    margin-bottom: 60px; /* Reduced margin for mobile */
+    max-width: 90%; /* Adjusted max-width for mobile */
     text-align: center;
   }
 
   .card {
-    padding: 1rem 2.5rem;
+    padding: 1rem; /* Adjusted padding for mobile */
   }
 
   .card h2 {
@@ -148,7 +151,7 @@
   }
 
   .center {
-    padding: 8rem 0 6rem;
+    padding: 6rem 0 4rem; /* Adjusted padding for mobile */
   }
 
   .center::before {

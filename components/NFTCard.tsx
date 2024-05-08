@@ -78,7 +78,9 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                 }}
                             >Close</button>
                         </div>
-                        <h3 style={{ margin: "10px 0" }}>You about to stake:</h3>
+                        <h3 style={{ margin: "10px 0",
+                            color: "white"
+                         }}>You about to stake:</h3>
                         <MediaRenderer
                             client={client}
                             src={nft.metadata.image}
@@ -98,7 +100,7 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                 )}
                                 style={{
                                     width: "100%",
-                                    color: "white",
+                                    color: "black",
                                 }}
                                 onTransactionConfirmed={() => setIsApproved(true)}
                             >Approve</TransactionButton>

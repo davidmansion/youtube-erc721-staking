@@ -103,7 +103,7 @@ export const Staking = () => {
                     margin: "20px 0",
                     width: "100%"
                 }}>
-                    <h2 style={{ color: "white"}}>All NFTs</h2>
+                    <h2 style={{ color: "white"}}>Your NFTs</h2>
                     <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px"}}>
                         {ownedNFTs && ownedNFTs.length > 0 ? (
                             ownedNFTs.map((nft, index) => (
